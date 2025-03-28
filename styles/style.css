@@ -32,7 +32,7 @@
   border: 2px solid var(--border-color);
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
     clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   background-color: var(--main-background-color);
 }
 
@@ -79,22 +79,24 @@
   position: absolute;
   top: clamp(1.4375rem, 1.3935rem + 0.1878vw, 1.5625rem);
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
   z-index: 1;
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   text-shadow: 0 0 1px var(--text-stroke-color);
 }
 
 @supports (
-  (text-stroke: 1px var(--text-stroke-color)) or
-    (-webkit-text-stroke: 1px var(--text-stroke-color))
+  (text-stroke: 2px var(--text-stroke-color)) or
+    (-webkit-text-stroke: 2px var(--text-stroke-color))
 ) {
 
   .card__image-text {
     text-shadow: none;
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+    -webkit-text-stroke: 2px var(--text-stroke-color);
     /* stylelint-disable-next-line property-no-unknown */
-    text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 2px var(--text-stroke-color);
   }
 }
 
@@ -244,12 +246,12 @@
   border: 2px solid var(--border-color);
   line-height: 12.6px;
   background-color: var(--main-background-color);
+  transition: box-shadow 0.3s ease-in;
 }
 
 .text-button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
   outline: none;
-  transition: box-shadow 0.2s ease-in;
 }
 
 .text-button::before {
@@ -273,7 +275,7 @@
 
 .button__text {
   color: var(--main-text-color);
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   mix-blend-mode: difference;
 }
@@ -294,7 +296,7 @@
 }
 
 @media (width <= 375px) {
-  
+
   .main__button {
     flex-direction: column;
   }
@@ -324,7 +326,7 @@
 }
 
 .dialog__text {
-  font-family: var(--accent-font-family);
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 1.5em;
   text-transform: uppercase;
