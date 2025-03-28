@@ -11,15 +11,15 @@
 */
 
 .page {
-  min-inline-size: 320px;
-  min-block-size: 100dvb;
-  font-size: 18px;
   font-family: var(--main-font-family), serif;
-  font-variation-settings: 'wght' var(--main-font-weight);
+  font-size: 18px;
   background-color: #d3d3d3;
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
+  min-inline-size: 320px;
+  min-block-size: 100dvb;
+  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 .content {
@@ -29,22 +29,23 @@
 
 .header {
   width: 100%;
-  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
-  font-family: var(--accent-font-family);
   border: 2px solid var(--border-color);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem)
+    clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  font-family: var(--accent-font-family);
   background-color: var(--main-background-color);
 }
 
 .header__logo {
-  text-align: center;
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-bottom: 20px;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  text-align: center;
 }
 
 .header__caption {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .main {
@@ -64,8 +65,8 @@
 }
 
 .card__header {
-  font-variation-settings: 'wght' var(--header-font-weight);
   padding: 4.99px 10px 3.8px;
+  font-variation-settings: "wght" var(--header-font-weight);
 }
 
 .card__image-container {
@@ -76,31 +77,34 @@
 
 .card__image-text {
   position: absolute;
-  z-index: 1;
   top: clamp(1.4375rem, 1.3935rem + 0.1878vw, 1.5625rem);
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
+  z-index: 1;
   font-family: var(--accent-font-family);
   font-size: 14px;
   text-shadow: 0 0 1px var(--text-stroke-color);
 }
 
-@supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
+@supports (
+  (text-stroke: 1px var(--text-stroke-color)) or
+    (-webkit-text-stroke: 1px var(--text-stroke-color))
+) {
 
   .card__image-text {
+    text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke-color);
     /* stylelint-disable-next-line property-no-unknown */
     text-stroke: 1px var(--text-stroke-color);
-    text-shadow: none;
   }
-} 
+}
 
 .card__image {
   display: block;
+  object-fit: cover;
+  object-position: right;
+  overflow: hidden;
   inline-size: 100%;
   aspect-ratio: 1;
-  object-fit: cover;
-  overflow: hidden;
-  object-position: right;
 }
 
 .grayscale-filter {
@@ -128,14 +132,15 @@
 }
 
 .all-filters {
-  filter: sepia(0.3) grayscale(0.2) contrast(1.3) blur(5px) brightness(1.6) invert(0.3) hue-rotate(238deg) saturate(1.6);
+  filter: sepia(0.3) grayscale(0.2) contrast(1.3) blur(5px) brightness(1.6)
+    invert(0.3) hue-rotate(238deg) saturate(1.6);
 }
 
 .card__text-area {
-  margin: 25px;
   display: flex;
   flex-direction: column;
   gap: 27px;
+  margin: 25px;
   line-height: 21px;
 }
 
@@ -145,21 +150,21 @@
 }
 
 .card__buttons {
-  margin: 0 25px 25px 0;
   display: flex;
-  gap: 6px;
   align-items: center;
+  gap: 6px;
+  margin: 0 25px 25px 0;
 }
 
 .card__icon-button {
-  background-color: transparent;
   border: 2px solid transparent;
+  background-color: transparent;
   transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
   border-color: var(--accent-color);
+  outline: none;
 }
 
 @keyframes like-scale {
@@ -170,7 +175,7 @@
 }
 
 @keyframes like-sparks {
-
+  
   to {
     opacity: 1;
   }
@@ -222,8 +227,8 @@
 }
 
 .like-icon.is-liked .contour {
-  transition: fill 0.3s linear 0.06s;
   fill: var(--icon-fill-color);
+  transition: fill 0.3s linear 0.06s;
 }
 
 .sparks {
@@ -236,25 +241,25 @@
 
 .text-button {
   position: relative;
-  background-color: var(--main-background-color);
   border: 2px solid var(--border-color);
   line-height: 12.6px;
+  background-color: var(--main-background-color);
 }
 
 .text-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
   outline: none;
   transition: box-shadow 0.2s ease-in;
-  box-shadow: 2px 2px 0 var(--accent-color);
 }
 
 .text-button::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  transform-origin: left;
-  transform: scaleX(0);
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .text-button:hover::before {
@@ -267,29 +272,29 @@
 }
 
 .button__text {
+  color: var(--main-text-color);
   font-family: var(--accent-font-family);
   font-size: 14px;
-  color: var(--main-text-color);
   mix-blend-mode: difference;
 }
 
 .main__button {
-  margin: 50px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  margin: 50px auto 0;
   padding: 15px 20px;
 }
 
 .main__button-icon {
+  filter: brightness(0) invert(1);
   inline-size: 21px;
   mix-blend-mode: difference;
-  filter: brightness(0) invert(1)
 }
 
 @media (width <= 375px) {
-
+  
   .main__button {
     flex-direction: column;
   }
@@ -301,13 +306,13 @@
 
 .dialog[open] {
   display: grid;
-  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
-  padding: 30px;
-  align-items: center;
+  grid-template-columns: min-content 1fr;
   justify-content: center;
+  align-items: center;
   row-gap: 30px;
   column-gap: 20px;
-  grid-template-columns: min-content 1fr;
+  padding: 30px;
+  inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
 }
 
 .dialog[open]::backdrop {
@@ -321,8 +326,8 @@
 .dialog__text {
   font-family: var(--accent-font-family);
   font-size: 14px;
-  text-transform: uppercase;
   line-height: 1.5em;
+  text-transform: uppercase;
 }
 
 .dialog__button {
