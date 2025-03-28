@@ -1,1 +1,1 @@
-https://github.com/maxererl/slozhno-sosredotochitsya-fd
+https://github.com/maxererl/zakrivayuschiy-teg-f

@@ -16,6 +16,7 @@
   font-size: 18px;
   font-family: var(--main-font-family), serif;
   font-variation-settings: 'wght' var(--main-font-weight);
+  background-color: #d3d3d3;
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -81,16 +82,17 @@
   font-family: var(--accent-font-family);
   font-size: 14px;
   text-shadow: 0 0 1px var(--text-stroke-color);
-  -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
-@supports (text-stroke: 1px var(--text-stroke-color)) {
+@supports((text-stroke: 1px var(--text-stroke-color)) or (-webkit-text-stroke: 1px var(--text-stroke-color))) {
 
-  span {
+  .card__image-text {
+    -webkit-text-stroke: 1px var(--text-stroke-color);
     /* stylelint-disable-next-line property-no-unknown */
     text-stroke: 1px var(--text-stroke-color);
+    text-shadow: none;
   }
-}
+} 
 
 .card__image {
   display: block;
